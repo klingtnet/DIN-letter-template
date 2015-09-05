@@ -1,0 +1,61 @@
+\documentclass[DIN,%
+               ngerman,%
+               pagenumber=false,%
+               parskip=half,%
+               fromalign=left,%
+               fromphone=true,%
+               fromemail=true,%
+               fromurl=false, %
+               fromlogo=false,%
+               fromrule=false]{scrlttr2}   % references message.lco
+
+% http://tex.stackexchange.com/a/54077
+\usepackage{ifxetex}
+\ifxetex%
+    \usepackage{amsmath, amssymb}
+    \usepackage{fontspec}
+    \usepackage{polyglossia}
+    \setmainlanguage[spelling=new, babelshorthands=true]{german}
+    \setmainfont{Linux Biolinum}
+\else
+    \usepackage{babel}
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+    \usepackage[babel=true]{microtype}
+    \usepackage{eurosym}
+\fi
+
+\RequirePackage{graphicx}
+
+\setkomavar{fromname}{Jane Sane}
+\setkomavar{fromaddress}{Street 123\\54321 Example-City}
+\setkomavar{fromphone}{+12 345 678901}
+\setkomavar{fromemail}{name@surname.com}
+\setkomavar{fromurl}{www.surname.com}
+\setkomavar{signature}{\vspace{\baselineskip}\\Jane Sane}
+%\setkomavar{fromlogo}{\includegraphics*[width=2cm]{logo}}
+
+%\setkomavar{yourref}{}
+%\setkomavar{yourmail}{}
+%\setkomavar{myref}{}
+%\setkomavar{customer}{}
+%\setkomavar{invoice}{}
+\setkomavar{date}{\today}
+\setkomavar{subject}{Some Important Subject}
+
+\begin{document}
+
+\begin{letter}
+{%
+receiving address
+}
+
+\opening{Dear \ldots}
+
+some text I want you to read.
+
+\closing{best regards,}
+\end{letter}
+
+\end{document}
