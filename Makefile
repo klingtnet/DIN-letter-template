@@ -14,6 +14,7 @@ all: $(addsuffix .pdf, $(basename $(wildcard *.tex)))
 
 clean:
 	rm -f $(addsuffix .pdf, $(basename $(wildcard *.tex)))
+	rm -f $(addsuffix .png, $(basename $(wildcard *.tex)))
 
 png: $(addsuffix .png, $(basename $(wildcard *.tex)))
 
