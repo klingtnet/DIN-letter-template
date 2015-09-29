@@ -14,3 +14,8 @@ all: $(addsuffix .pdf, $(basename $(wildcard *.tex)))
 
 clean:
 	rm -f $(addsuffix .pdf, $(basename $(wildcard *.tex)))
+
+png: $(addsuffix .png, $(basename $(wildcard *.tex)))
+
+%.png: %.pdf
+	montage -mode Concatenate -tile 1x -density 90 $(basename $@).pdf $@
