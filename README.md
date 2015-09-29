@@ -9,3 +9,7 @@ A DIN letter template for pdf- or XeLaTeX.
 ```sh
 $ make
 ```
+
+## Preview
+
+![preview image](message.png)
