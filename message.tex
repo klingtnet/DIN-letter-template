@@ -1,101 +1,26 @@
 \documentclass[version=last, fontsize=12pt]{scrlttr2}   % references message.lco
 
-\KOMAoptions{paper=a4,%
-%             symbolicnames,% phone, email symbol etc.
-             parskip=half,%
-             enlargefirstpage=false,%
-             locfield=wide,%
-             fromalign=left,% location, locationleft, center, left, right, location, ...
-             fromrule=aftername% afteraddress
-}
-
-\LoadLetterOption{DIN}
+\usepackage{letterAlinz}
 
 % http://tex.stackexchange.com/a/54077
-\usepackage{color}
-\usepackage{lastpage}
-\usepackage{ifxetex}
-\ifxetex%
-    \usepackage{amsmath, amssymb}
-    \usepackage{fontspec}
-    \usepackage{polyglossia}
-    \setmainlanguage[spelling=new, babelshorthands=true]{german}
-    \setmainfont{Linux Libertine}
-    \setsansfont{Linux Biolinum}
-\else
-    \usepackage[ngerman]{babel}
-    \usepackage[T1]{fontenc}
-    \usepackage[utf8]{inputenc}
-    \usepackage{lmodern}
-    \usepackage[babel=true]{microtype}
-    \usepackage{eurosym}
-\fi
-
-\RequirePackage{graphicx}
-
 % firsthead
-\addtokomafont{fromname}{\bfseries\scshape\large}
-\addtokomafont{fromrule}{\color{blue}}
-\setkomavar{fromname}{Max Mustermann}
-\setkomavar{fromaddress}{%
-    Straße der Einheit 3451\\
-    23452 Beispielhausen%
-}
-\setkomavar{fromphone}{+49\,342\,16~89\,192}
-%\setkomavar{fromfax}{}
-\setkomavar{frommobilephone}{+49\,151~432\,89\,023}
-\setkomavar{fromemail}{name@surname.com}
-\setkomavar{fromurl}{www.surname.com}
-\setkomavar{frombank}{IBAN DE21~12345678~98765432\\
-                      BIC RTJGECNA007\\
-                      Sparkasse Beispielhausen}
-\setkomavar{fromlogo}{\includegraphics[width=5.4em]{logo}}
-
-\setkomavar{location}{\footnotesize
-    \begin{tabular}[t]{@{}r l}%
-        \usekomavar*{fromphone}         & \usekomavar{fromphone}\\
-        \usekomavar*{frommobilephone}   & \usekomavar{frommobilephone}\\
-                                        & \\
-        \usekomavar*{fromurl}           & \usekomavar{fromurl}\\
-        \usekomavar*{fromemail}         & \usekomavar{fromemail}
-    \end{tabular}
-}
-
-\setkomavar{backaddressseparator}{\enspace\textperiodcentered\enspace}
-\setkomavar{enclseparator}{:}
-\setkomavar{signature}{\vspace{\baselineskip}\\\usekomavar{fromname}}
-
-% examples: ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/macros/latex/contrib/koma-script/doc/scrguide.pdf page 204
-\setkomavar{firstfoot}{%
-}
-
-\setkomafont{addressee}{\sffamily}
-\addtokomafont{lettersubject}{\color{blue}}
-
-\pagestyle{headings}
-
-\renewcommand\pagemark{%
-    \usekomafont{pagenumber}\thepage{}~/~\pageref{LastPage}%
-}
 \begin{document}
 
-%\setkomavar{yourref}{}
-%\setkomavar{yourmail}{}
-%\setkomavar{myref}{}
-%\setkomavar{customer}{}
-%\setkomavar{invoice}{}
+\LoadLetterOptions{letterStyleAlinz, example}
+
+\setkomavar{yourref}{}
+\setkomavar{yourmail}{}
+\setkomavar{myref}{}
+\setkomavar{customer}{}
+\setkomavar{invoice}{}
 \setkomavar{place}{Leipzig}
 \setkomavar{date}{\today}
 
-%\setkomavar{title}{Mahnung}
-%\addtokomafont{title}{\scshape\color{red}}
+\setkomavar{title}{Mahnung}
+\addtokomafont{title}{\scshape\color{red}}
 
 \setkomavar{subject}{Ein wichtiger Betreff}
 \begin{letter}[%
-%    fromemail,%
-%    fromurl,%
-%    fromphone,%
-%    frommobilephone%
 %    subject=untitled,% underlined, centered, right, afteropening
     headsepline=true,%
     footsepline=false,%
