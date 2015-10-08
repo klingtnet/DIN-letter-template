@@ -12,4 +12,4 @@ $ make
 
 ## Preview
 
-![preview image](message.png)
+![preview image](preview.png)
