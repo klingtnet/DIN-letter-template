@@ -20,4 +20,4 @@ preview: message.pdf
 	montage -mode Concatenate -tile 1x -density 90 $< $(basename $@).png
 
 %.png: %.pdf
-	montage -mode Concatenate -tile 1x -density 90 $(basename $@).pdf $@
+	convert -density 300 $(basename $@).pdf $@
