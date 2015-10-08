@@ -6,7 +6,7 @@ TMP_DIR:="$(shell mktemp -d)"
 
 all: $(addsuffix .pdf, $(basename $(wildcard *.tex)))
 
-%.pdf:
+%.pdf: %.tex
 	xelatex -output-directory=$(TMP_DIR) $(basename $@).tex
 	xelatex -output-directory=$(TMP_DIR) $(basename $@).tex
 	mv "$(TMP_DIR)/$@" .
