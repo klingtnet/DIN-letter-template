@@ -2,19 +2,12 @@
 
 A DIN letter template for pdf- or XeLaTeX.
 
-## Install
+## Quickstart
 
-`make install`
-
-## Default Address/Options
-
-- take a copy of the provided example letter-class-options: `cp example.lco ${USERNAME}.lco`
-- change it to your needs
-
-## Use it
-
-- `message.tex` provides a working exmaple
-- or derive from this (change these values `<...>`):
+- install the package `make install`
+- modify the letter-class-option example `example.lco` and save it somewhere resonable, g.e. `~/letters/lcos`
+     - if you use a logo and you want to set the path to it relative from your user home, escape the `~` like this `\string~`, g.e. `\string~/letters/imgs/mylogo.pdf`
+- take a look at the `example.tex` or derive from this:
 
 ```tex
 \documentclass[version=last, fontsize=12pt]{scrlttr2}
@@ -23,15 +16,14 @@ A DIN letter template for pdf- or XeLaTeX.
 
 \begin{document}
 
-\LoadLetterOptions{letterStyleAlinz, <MyLCO>}
-% change <myLCO> to the name of your letter-class-option file, \wo the `.lco` ending
+\LoadLetterOptions{letterStyleAlinz, \string~/letters/lcos/mylco}
 
 \setkomavar{yourref}{}
 \setkomavar{yourmail}{}
 \setkomavar{myref}{}
 \setkomavar{customer}{}
 \setkomavar{invoice}{}
-\setkomavar{place}{<MyCity>}
+\setkomavar{place}{Beispielstadt}
 \setkomavar{date}{\today}
 
 \setkomavar{title}{Ein schoener langer Titel}
@@ -74,13 +66,8 @@ hier können Sie nach belieben schwafeln.
 \end{document}
 ```
 
-## Build
-
-- the Makefile depends on an existing `xelatex` at the moment
-
-```sh
-$ make
-```
+- build with `latexmk -xelatex`
+- remove clutter with `latexmk -c` or `latexmk -C` which will also remove the pdfs
 
 ## Preview
 
