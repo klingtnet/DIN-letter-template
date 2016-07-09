@@ -47,7 +47,7 @@ hier können Sie nach belieben schwafeln.
 
 \closing{Mit freundlichen Grüßen,}
 
-\ps PS: Leider vergas ich Ihnen mitzuteilen, dass Sie das Licht ausmachen müssen!
+\ps PS: Leider vergas ich Ihnen mitzuteilen das Sie das Licht ausmachen müssen!
 
 \setkomavar*{enclseparator}{Anlage}
 \encl{{%
