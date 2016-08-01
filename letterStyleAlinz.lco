@@ -20,12 +20,12 @@
 		\ifkomavarempty{frommobilephone}{}{%
 	        \usekomavar*{frommobilephone}   & \usekomavar{frommobilephone}\\
 		}
-                                        & \\
+                                            & \\
 		\ifkomavarempty{fromurl}{}{%
-	        \usekomavar*{fromurl}           & \usekomavar{fromurl}\\
+	                                        & \usekomavar{fromurl}\\
 		}
 		\ifkomavarempty{fromemail}{}{%
-	        \usekomavar*{fromemail}         & \usekomavar{fromemail}
+	                                        & \usekomavar{fromemail}
 		}
     \end{tabular}
 }
